@@ -2444,7 +2444,7 @@
                         <nav id="main-nav" class="main-nav clearfix tabbed">
                            <ul class="pl-0">
                               <li class="outer radius-2 mb-3">
-                                 <a class="inner radius-2" href="#home" >
+                                 <a class="inner radius-2 menu-scroll-to" href="#home" >
                                     <div class="media align-items-center ">
                                        <div class="media-body text-left">
                                           <span class="font-weight-600 font-size-13 text-uppercase  text-muted">Home</span>
@@ -2464,7 +2464,7 @@
                                  </a>
                               </li>
                               <li class="outer radius-2 mb-3">
-                                 <a class="inner radius-2" href="#about" >
+                                 <a id="firstAbout" class="inner radius-2 menu-scroll-to" href="#about" >
                                     <div class="media  align-items-center ">
                                        <div class="media-body text-left">
                                           <span class="font-weight-600 font-size-13 text-uppercase  text-muted">About</span>
@@ -2490,7 +2490,7 @@
                                  </a>
                               </li>
                               <li class="outer radius-2 mb-3">
-                                 <a class="inner radius-2" href="#education" >
+                                 <a class="inner radius-2 menu-scroll-to" href="#education" >
                                     <div class="media  align-items-center ">
                                        <div class="media-body text-left">
                                           <span class="font-weight-600 font-size-13 text-uppercase  text-muted">Education</span>
@@ -2513,7 +2513,7 @@
                               </li>
 <!--                              Experience-->
                               <li class="outer radius-2 mb-3">
-                                 <a class="inner radius-2" href="#experience" >
+                                 <a class="inner radius-2 menu-scroll-to" href="#experience" >
                                     <div class="media  align-items-center ">
                                        <div class="media-body text-left">
                                           <span class="font-weight-600 font-size-13 text-uppercase  text-muted">Experience</span>
@@ -2533,7 +2533,7 @@
                                  </a>
                               </li>
                               <li class="outer radius-2 mb-3">
-                                 <a class="inner radius-2" href="#certificates" >
+                                 <a class="inner radius-2 menu-scroll-to" href="#certificates" >
                                     <div class="media  align-items-center ">
                                        <div class="media-body text-left">
                                           <span class="font-weight-600 font-size-13 text-uppercase  text-muted">Certificates</span>
@@ -2585,7 +2585,7 @@
                                  </a>
                               </li>
                               <li class="outer radius-2 mb-3">
-                                 <a class="inner radius-2" href="#honors" >
+                                 <a class="inner radius-2 menu-scroll-to" href="#honors" >
                                     <div class="media  align-items-center ">
                                        <div class="media-body text-left">
                                           <span class="font-weight-600 font-size-13 text-uppercase  text-muted">Honors</span>
@@ -2598,7 +2598,7 @@
                                  </a>
                               </li>
                               <li class="outer radius-2 mb-3">
-                                 <a class="inner radius-2" href="#skill" >
+                                 <a class="inner radius-2 menu-scroll-to" href="#skill" >
                                     <div class="media  align-items-center ">
                                        <div class="media-body text-left">
                                           <span class="font-weight-600 font-size-13 text-uppercase  text-muted">Skills</span>
@@ -2611,7 +2611,7 @@
                                  </a>
                               </li>
                               <li class="outer radius-2 mb-3">
-                                 <a class="inner radius-2" href="#projects" >
+                                 <a class="inner radius-2 menu-scroll-to" href="#projects" >
                                     <div class="media  align-items-center ">
                                        <div class="media-body text-left">
                                           <span class="font-weight-600 font-size-13 text-uppercase  text-muted">Projects</span>
@@ -2664,6 +2664,21 @@
       <script src="js/morphext.min.js"></script>
       <script src="js/switcher.js"></script>
       <script src="js/script.js"></script>
+      <script type="text/javascript">
+         setTimeout("clickAbout()",3000);
+         if ($(window).width() < 992) {
+            document.querySelectorAll('.menu-scroll-to').forEach(item => {
+               item.addEventListener('click', () => window.scrollTo({
+                  top: 1000,
+                  behavior: 'smooth',
+               }));
+            })
+         }
+         function clickAbout()
+         {
+            document.getElementById('firstAbout').click();
+         }
+      </script>   
    </body>
 </html>
 
